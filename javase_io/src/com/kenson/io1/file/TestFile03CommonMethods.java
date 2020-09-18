@@ -1,0 +1,119 @@
+package com.kenson.io1.file;
+
+import java.io.File;
+import java.io.IOException;
+
+/**
+ * @description: 测试File类中常用的方法
+ * 常用方法：
+ * 1. 文件名
+ * getName() 文件名、路径名
+ * getPath() 路径名
+ * getAbsoluteFile() 绝对路径所对应的File对象
+ * getAbsolutePath() 绝对路径
+ * getParent()父目录， 相对路径的父目录，可能为null 如 删除本身后的结果
+ * 2. 判断信息
+ * exist()
+ * canWrite()
+ * canRead()
+ * isFile()
+ * isDirectory()
+ * isAbsolute()	消除平台差异， ie一盘符开头，其他以/开头
+ * 3. 长度(字节数)  不能读取文件夹的长度
+ * length()
+ * 4. 创建、 删除
+ * creatNewFile() 不存在创建新文件	存在创建失败
+ * delete()删除文件
+ * static createTempFile(前缀3个字节长，后缀默认 .temp) 默认临时空间
+ * static createTempFile(前缀3个字节长，后缀默认 .temp  目录)
+ * deleteOnExit() 退出虚拟机删除， 常用于删除临时文件
+ * @author: Kenson
+ * @date: 2020/9/16
+ */
+public class TestFile03CommonMethods {
+
+    public static void main(String[] args) {
+        test1();
+        test2();
+        test3();
+    }
+
+    /**
+     * 构建信息
+     */
+    public static void test1() {
+        System.out.println("===============构建信息=====================");
+        //File src = new File("C:/BaiduNetdiskDownload/1.jpg");
+        //建立以硬盘的联系
+        File src = new File("1.jpg");
+        System.out.println(src.getName());    //返回名称
+        System.out.println(src.getPath());    //如果是绝对路径，返回完整路径，否则相对路径
+        System.out.println(src.getAbsolutePath());    //返回绝对路径
+        System.out.println(src.getParent());    //返回上一级目录，如果相对，返回null
+    }
+
+    /**
+     * 判断信息
+     */
+
+    public static void test2() {
+        String path = "1.jpg";
+        path = "C:/OneTEAM/OneTEAMTools/IO/TestFiles/1.jpg";
+        path = "C:/OneTEAM/OneTEAMTools/IO/TestFiles";
+        System.out.println("===============判断信息=====================");
+        File src = new File(path);
+        //是否存在
+        System.out.println("文件是否存在： " + src.exists());
+        //文件是否可读写 canRead() canWrite()
+        System.out.println("文件是否读：　" + src.canRead());
+
+        //是文件 文件夹
+        if (src.isFile()) {
+            System.out.println("文件");
+        } else if (src.isDirectory()) {
+            //没有真实存在的文件 ， 默认为文件夹
+            System.out.println("文件夹");
+        } else {
+            System.out.println("文件不存在！");
+        }
+
+    }
+
+    /**
+     * 创建、 删除
+     */
+    public static void test3() {
+        //creatNewFile() 不存在创建新文件
+        String path = "C:/OneTEAM/OneTEAMTools/IO/TestFiles/200.jpg";
+        File src = new File(path);
+        if (!src.exists()) {
+            try {
+                boolean flag = src.createNewFile();
+                System.out.println(flag ? "成功" : "失败");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        //删除文件
+        boolean delFalge = src.delete();
+        System.out.println(delFalge ? "删除成功" : "删除失败");
+
+        //static createTempFile(前缀3个字节长，后缀默认 .temp) 默认临时空间
+        //static createTempFile(前缀3个字节长，后缀默认 .temp  目录)
+        try {
+            File temp = File.createTempFile("test", ".temp", new File("C:/OneTEAM/OneTEAMTools/IO/TestFiles"));
+            Thread.sleep(10000);
+            temp.deleteOnExit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+}
