@@ -11,7 +11,7 @@ public class Test01FileReader {
     public static void main(String[] args) {
 
         //创建源
-        File src = new File("./TestFiles/zipfiles.txt");
+        File src = new File("javase_io/src/sourceFiles/zipfiles.txt");
         //选择流
         Reader reader = null;
         try {
