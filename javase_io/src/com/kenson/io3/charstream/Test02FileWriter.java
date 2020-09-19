@@ -10,7 +10,7 @@ import java.io.*;
 public class Test02FileWriter {
     public static void main(String[] args) {
         //创建源
-        File dest = new File("./TestFiles/charIO.txt");
+        File dest = new File("javase_io/src/destFiles/charIO.txt");
         //选择流
         Writer writer = null;
         try {
