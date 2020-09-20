@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorA</OriginalElement>
+  <nodes>
+    <node x="354.0" y="312.0">com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorA</node>
+    <node x="412.5419372294373" y="460.0">com.kenson.io11.decoratorpattern.advancedexample.TestAdvanceDecorator</node>
+    <node x="0.0" y="312.0">com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorB</node>
+    <node x="220.04193722943728" y="121.0">com.kenson.io11.decoratorpattern.advancedexample.Decorator</node>
+    <node x="608.2767857142858" y="161.0">com.kenson.io11.decoratorpattern.advancedexample.ConcreteComponent</node>
+    <node x="302.5267857142857" y="0.0">com.kenson.io11.decoratorpattern.advancedexample.Component</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.TestAdvanceDecorator" target="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorA">
+      <point x="19.08333333333337" y="-30.5" />
+      <point x="546.1252705627707" y="420.0" />
+      <point x="606.0" y="420.0" />
+      <point x="84.0" y="44.0" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.TestAdvanceDecorator" target="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorB">
+      <point x="-95.41666666666663" y="-30.5" />
+      <point x="431.62527056277065" y="440.0" />
+      <point x="83.5" y="440.0" />
+      <point x="-83.5" y="44.0" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.Decorator" target="com.kenson.io11.decoratorpattern.advancedexample.Component">
+      <point x="-86.33333333333331" y="-70.5" />
+      <point x="263.20860389610397" y="91.0" />
+      <point x="357.16964285714283" y="91.0" />
+      <point x="-72.85714285714289" y="30.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.ConcreteComponent" target="com.kenson.io11.decoratorpattern.advancedexample.Component">
+      <point x="0.0" y="-30.5" />
+      <point x="735.7767857142858" y="91.0" />
+      <point x="502.8839285714285" y="91.0" />
+      <point x="72.85714285714278" y="30.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.TestAdvanceDecorator" target="com.kenson.io11.decoratorpattern.advancedexample.Component">
+      <point x="95.41666666666663" y="-30.5" />
+      <point x="622.4586038961039" y="440.0" />
+      <point x="873.7767857142858" y="440.0" />
+      <point x="873.7767857142858" y="81.0" />
+      <point x="539.3125" y="81.0" />
+      <point x="109.28571428571422" y="30.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorA" target="com.kenson.io11.decoratorpattern.advancedexample.Decorator">
+      <point x="-112.0" y="-44.0" />
+      <point x="410.0" y="287.0" />
+      <point x="381.9169372294373" y="287.0" />
+      <point x="32.375" y="70.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorB" target="com.kenson.io11.decoratorpattern.advancedexample.Decorator">
+      <point x="111.33333333333337" y="-44.0" />
+      <point x="278.33333333333337" y="287.0" />
+      <point x="317.1669372294373" y="287.0" />
+      <point x="-32.375" y="70.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.TestAdvanceDecorator" target="com.kenson.io11.decoratorpattern.advancedexample.ConcreteComponent">
+      <point x="57.25" y="-30.5" />
+      <point x="584.2919372294373" y="430.0" />
+      <point x="735.7767857142858" y="430.0" />
+      <point x="0.0" y="30.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorB" target="com.kenson.io11.decoratorpattern.advancedexample.Component">
+      <point x="-111.33333333333331" y="-44.0" />
+      <point x="55.666666666666686" y="287.0" />
+      <point x="151.98538961038963" y="287.0" />
+      <point x="151.98538961038963" y="81.0" />
+      <point x="320.74107142857144" y="81.0" />
+      <point x="-109.28571428571428" y="30.5" />
+    </edge>
+    <edge source="com.kenson.io11.decoratorpattern.advancedexample.ConcreteDecoratorA" target="com.kenson.io11.decoratorpattern.advancedexample.Component">
+      <point x="112.0" y="-44.0" />
+      <point x="634.0" y="287.0" />
+      <point x="541.25" y="287.0" />
+      <point x="541.25" y="101.0" />
+      <point x="466.4553571428571" y="101.0" />
+      <point x="36.42857142857139" y="30.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="437.0" y="260.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
