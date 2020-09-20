@@ -1,4 +1,4 @@
-package com.kenson.thread01.threadjdkmethods;
+package com.kenson.thread02.threadjdkmethods;
 
 /**
  * @description: 测试自定义线程类
@@ -27,20 +27,23 @@ public class TestMyThread1 {
         // 启动线程
         proxy.start();
 
+        Thread.sleep(2);
+
         // 启动之后线程的状态
         System.out.println("启动之后线程的状态： " + proxy.getState()); // RUNNABLE
         System.out.println("启动之后线程是否激活: " + proxy.isAlive()); // true
 
         // 主程序休眠2毫秒
-        Thread.sleep(10);
-        // sleep之后的状态
-        System.out.println("sleep之后线程的状态： " + proxy.getState()); // TERMINATED
-        System.out.println("sleep之后线程是否激活: " + proxy.isAlive()); // false
+//        Thread.sleep(10);
 
         // 停止线程
         myThread1.stop();
-        System.out.println("停止后线程的状态： " + proxy.getState()); // TERMINATED
+        System.out.println("停止后线程的状态： " + proxy.getState()); // RUNNABLE
         System.out.println("停止后线程是否激活：" + proxy.isAlive()); // false
+
+        proxy.interrupt();
+        System.out.println("终止后线程的状态： " + proxy.getState()); // RUNNABLE
+        System.out.println("终止后线程是否激活：" + proxy.isAlive()); // trues
 
     }
 }

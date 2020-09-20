@@ -1,4 +1,6 @@
-package com.kenson.thread01.threadjdkmethods;
+package com.kenson.thread02.threadjdkmethods;
+
+import javax.swing.plaf.TableHeaderUI;
 
 /**
  * @description:
@@ -14,6 +16,11 @@ public class MyThread implements Runnable {
     public void run() {
         while (flag) {
 //        while (num < 10) {
+//            try {
+//                Thread.sleep(2);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
             System.out.println(Thread.currentThread().getName() + " ---> " + num++);
         }
     }
