@@ -1,5 +1,7 @@
 package com.kenson.thread04.sync.synchronize;
 
+import java.util.Date;
+
 /**
  * @description: 购买火车票线程类
  * @author: Kenson
@@ -84,7 +86,8 @@ public class BuyTicket implements Runnable {
      * 可以实现锁定资源
      */
     public void grabbingTickets3() {
-        synchronized (this) {
+//        synchronized (this) {
+        synchronized (BuyTicket.class) {
             if (tktNum <= 0) {
                 flag = false; // 跳出循环
                 return;
