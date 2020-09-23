@@ -1,7 +1,5 @@
 package com.kenson.thread04.sync.synchronize;
 
-import java.util.Date;
-
 /**
  * @description: 购买火车票线程类
  * @author: Kenson
@@ -19,11 +17,29 @@ public class BuyTicket implements Runnable {
             // 购票
 //            grabbingTickets1(); // 线程不安全,导致有负数票的情况出现
 //            grabbingTickets2(); // 线程不安全,导致有负数票的情况出现
-            grabbingTickets3(); // 线程安全
+//            grabbingTickets3(); // 线程安全
 //            grabbingTickets4(); // 线程不安全,导致有重复数票的情况出现
 //            grabbingTickets5(); // 线程不安全,导致有重复数票的情况出现
 //            grabbingTickets6(); // 线程不安全 导致有负数票的情况出现
+            grabbingTickets7(); // 线程不安全 导致有负数票的情况出现
         }
+    }
+
+    /**
+     * 同步方法
+     * 线程安全
+     */
+    public synchronized void grabbingTickets7() {
+        if (tktNum <= 0) {
+            flag = false; // 跳出循环
+            return; //避免当票已经卖到0时继续往下执行
+        }
+        try {
+            Thread.sleep(500); // 真实模拟售票创建出票的情况,所以每个线程都让它等待0.5秒
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
     }
 
     /**
@@ -40,7 +56,7 @@ public class BuyTicket implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+            System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
         }
     }
 
@@ -58,7 +74,7 @@ public class BuyTicket implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+            System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
         }
     }
 
@@ -77,17 +93,17 @@ public class BuyTicket implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+        System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
 
     }
 
     /**
-     * 同步方法块
+     * 同步代码块
      * 可以实现锁定资源
      */
     public void grabbingTickets3() {
-//        synchronized (this) {
-        synchronized (BuyTicket.class) {
+        synchronized (this) {
+//        synchronized (BuyTicket.class) {
             if (tktNum <= 0) {
                 flag = false; // 跳出循环
                 return;
@@ -97,7 +113,7 @@ public class BuyTicket implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+            System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
         }
     }
 
@@ -115,7 +131,7 @@ public class BuyTicket implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+        System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
     }
 
     /**
@@ -133,6 +149,6 @@ public class BuyTicket implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(Thread.currentThread().getName() + " 抢到了票为： " + tktNum-- + "的票！");
+        System.out.println(Thread.currentThread().getName() + " 卖出了票号为： ： " + tktNum-- + "的票！");
     }
 }

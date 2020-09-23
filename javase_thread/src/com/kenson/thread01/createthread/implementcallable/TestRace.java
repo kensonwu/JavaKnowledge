@@ -6,13 +6,17 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * @description: 测试通过实现Callable申明的线程
+ * @description: 测试线程池大量执行Callable
  * @author: Kenson
  * @date: 2020/9/20
  */
 public class TestRace {
     public static void main(String[] args) {
-        // 创建线程
+        // 创建一个可伸缩数量的线程池
+//        ExecutorService service = Executors.newCachedThreadPool();
+        // 创建一个只有一个线程的线程池
+//        ExecutorService service = Executors.newSingleThreadExecutor();
+        // 创建一个具有固定数量的线程池
         ExecutorService service = Executors.newFixedThreadPool(2);
         Race rabbit = new Race("小白兔", 500); // 每隔0.5秒跑一步
         Race tortoise = new Race("老乌龟", 1000);// 每隔1秒跑一步
