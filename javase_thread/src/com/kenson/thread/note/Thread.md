@@ -70,3 +70,9 @@
     * 需要大量线程，并且完成任务时间短
     * 对性能要求苛刻
     * 接收突发性的大量请求
+#### Java中封装的类：
+- InetAddress
+- InetSocketAddress
+- URL
+- TCP
+- UDP

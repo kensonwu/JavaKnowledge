@@ -18,9 +18,8 @@ public class Test01ByteBufferStream {
 
     /**
      * 文件的拷贝
-     *
-     * @param 源文件路径
-     * @param 目标文件路径
+     * @param srcPath 源文件路径
+     * @param destPath 目标文件路径
      */
     public static void copyFile(String srcPath, String destPath) {
         //1.	建立联系，File对象， 源头和目的地
