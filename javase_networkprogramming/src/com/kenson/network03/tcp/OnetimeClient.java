@@ -27,14 +27,6 @@ public class OnetimeClient {
             dos.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (dos != null) {
-                try {
-                    dos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
 
     }
